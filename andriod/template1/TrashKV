@@ -1,0 +1,22 @@
+            on_press : _ertefaFrame.text = str(int(_ertefa.text) - 6 )
+            on_press : _arzFrame.text = str(int(_arz.text) -6 )
+            on_press : _motaharek.text = str(float(_ertefa.text) - 7.5 )
+            on_press : _ertefaTur.text = str(float(_ertefa.text) - 3.5 )
+            on_press : _gamTur.text = str(float(_arz.text) / 2.5 )
+
+
+
+                    Button:
+            size_hint: 1, .15
+            text: 'TURSAN CALLCULATE'
+            background_normal: 'arz.png'
+            background_down : 'arz.png'
+            background_color : .88, .88, .88, 1
+
+            on_press : root.product(*args)
+
+
+        Image:
+            source:'top.png'
+            allow_stretch: True
+            size_hint: 1 , None

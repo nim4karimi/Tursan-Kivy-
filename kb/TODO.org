@@ -1,0 +1,8 @@
+popup_with_kv
+
+lang_dynamic_classes
+
+kivy prop ... number
+
+
+V 1.10

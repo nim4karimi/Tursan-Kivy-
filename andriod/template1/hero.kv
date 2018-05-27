@@ -1,0 +1,212 @@
+#:kivy 1.0
+<ImageButton@Button>:
+    source: None
+    Image:
+        source: root.source
+        center: root.center
+        allow_stretch : True
+
+<root>:
+    ertefa : _ertefa
+    arz : _arz
+    gheymat : _gheymat
+
+    ertefaFrame : _ertefaFrame
+    arzFrame : _arzFrame
+    motaharek : _motaharek
+
+    ertefaTur : _ertefaTur
+    gamTur : _gamTur
+    metr : _metr
+
+
+    nakha : _nakha
+    nakhb : _nakhb
+
+
+    gheymatKoll : _gheymatKoll
+
+
+    BoxLayout:
+        orientation:'vertical'
+        canvas:
+            Color :
+                rgb : 1,1,1
+            Rectangle:
+                pos: self.pos
+                size : self.size
+
+
+    # -------------------------------------------
+        GridLayout:
+            rows:3
+            col:2
+            size_hint: 1, .4
+            padding : 5
+
+
+    # INPUT ---[ ERTEFA ASLI ]---------------------------
+
+            TextInput:
+                id: _ertefa
+                input_filter : 'float'
+                input_type : 'number'
+                multiline: False
+                font_size : '30sp'
+                text: ''
+
+            Image:
+                source:'img1.png'
+
+    # INPUT ---[ ARZ ASLI ]------------------------------
+
+            TextInput:
+                id: _arz
+                input_filter : 'float'
+                input_type : 'number'
+                multiline: False
+                font_size : '30sp'
+                text: ''
+            Image:
+                source:'img2.png'
+
+    # INPUT ---[ GHEYMAT ]--------------------------------
+
+            TextInput:
+                id: _gheymat
+                input_filter : 'float'
+                input_type : 'number'
+                multiline: False
+                font_size : '30sp'
+                text: ''
+            Image:
+                source:'img3.png'
+
+
+
+    # ----------------------------------------------------
+        GridLayout:
+            id: 'outputs'
+            rows:11
+            col:2
+            padding : 5
+
+
+    # OUTPUT ---[ ERTEFA FRAME ]--------------------------
+
+            # PROC --[ Def Button ]------------------------------
+
+
+
+            ImageButton :
+                source : 'calc.png'
+                # text: 'Mohasebe'
+                on_press : root.product(*args)
+                # background_down : 'btt.jpg'
+                background_normal : 'btn1.png'
+
+            ImageButton :
+                source : 'dele.png'
+                background_down : 'btn2.png'
+                on_press : root.cleanz(*args)
+
+
+            Label:
+                id : _ertefaFrame
+                text: ''
+                color : 0,0,0,1
+                bold : True
+
+
+            Image:
+                source:'out1.png'
+
+
+    # OUTPUT ---[ ARZ FRAME ]--------------------------
+
+            Label:
+                id : _arzFrame
+                text: ''
+                color : 0,0,0,1
+                bold : True
+
+            Image:
+                source:'out2.png'
+
+
+    # OUTPUT ---[ MOTAHAREK ]--------------------------
+            Label:
+                id : _motaharek
+                text: ''
+                color : 0,0,0,1
+
+
+            Image:
+                source:'out3.png'
+
+
+    # OUTPUT ---[ ERTEFA TUR ]------------------------
+            Label:
+                id : _ertefaTur
+                text: ''
+                color : 0,0,0,1
+            Image:
+                source:'out4.png'
+
+
+    # OUTPUT ---[ GAM TUR ]---------------------------
+
+            Label:
+                id : _gamTur
+                text: ''
+                color : 0,0,0,1
+
+            Image:
+                source:'out5.png'
+
+    # OUTPUT ---[ Nakh 1 va 2 ]---------------------------
+
+            Label:
+                id : _nakha
+                text: ''
+                color : 0,0,0,1
+
+            Image:
+                source:'outnakh.png'
+
+    # OUTPUT ---[ Nakh 3 ]---------------------------
+
+            Label:
+                id : _nakhb
+                text: ''
+                color : 0,0,0,1
+
+            Image:
+                source:'outnakh2.png'
+
+    # OUTPUT ---[ METRE MORABA ]------------------------
+            Label:
+                id : _metr
+                text: ''
+                color : 0,0,0,1
+
+            Image:
+                source:'out6.png'
+
+    # OUTPUT ---[ GHEYMAT KOLL ]------------------------
+            Label:
+                id: _gheymatKoll
+                text: ''
+                bold: True
+                color : 1,0,0,1
+                font_size : '30sp'
+
+            Image:
+                source:'out7.png'
+
+    # INFO ---[ ADDRESS ]------------------------
+        Image:
+            source:'down.png'
+            size_hint: 1, None
+
+
